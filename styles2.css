@@ -1,0 +1,82 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #05183c;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+ #lampada {
+    width: 300px;
+    height: 300px;
+    margin: 50px  30px 30px 100px; /* Mantenha a margem superior e inferior e ajuste a margem automática à esquerda e à direita */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('https://arduinolivre.files.wordpress.com/2013/08/lampada_ligada.png');
+}
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ffd700;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color:white;
+    color: #05183c;
+  }
+  
+  h2 {
+    color: #ffffff;
+  }
+  
+  /* Adicionando estilo ao botão de reconhecimento de voz */
+  button#reconhecimento-voz {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  button#reconhecimento-voz:hover {
+    background-color: #45a049;
+  }
+  
+  
+
+
+  .button-container {
+    text-align: center;
+  }
+  
+  .styled-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: #05183c;
+    background-color: #ffd700;
+    border: 2px solid #05183c;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .styled-button:hover {
+    background-color: #fff;
+    color: #05183c;
+  }
+  
+  

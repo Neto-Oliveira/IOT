@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lâmpada com Reconhecimento de Voz</title>
+    <link rel="stylesheet" href="styles2.css">
+ 
+</head>
+<body>
+
+<div id="lampada"></div>
+<button onclick="ligarDesligarLampada()">Ligar/Desligar</button>
+
+<script>
+    var lampada = document.getElementById('lampada');
+    var isLigada = true;
+
+    function ligarDesligarLampada() {
+        isLigada = !isLigada;
+        var imagemURL = isLigada ? 'https://arduinolivre.files.wordpress.com/2013/08/lampada_ligada.png' : 'https://arduinolivre.files.wordpress.com/2013/08/lampada_desligada.png';
+        lampada.style.backgroundImage = 'url(' + imagemURL + ')';
+    }
+
+    // Adicionando reconhecimento de voz
+    var recognition = new webkitSpeechRecognition() || new SpeechRecognition();
+    recognition.lang = 'pt-BR';
+
+    recognition.onresult = function (event) {
+        var result = event.results[0][0].transcript.toLowerCase();
+        if (result.includes('ligar')) {
+            ligarDesligarLampada();
+        }
+    };
+
+    function iniciarReconhecimentoVoz() {
+        recognition.start();
+    }
+</script>
+
+<button onclick="iniciarReconhecimentoVoz()">Ativar Reconhecimento de Voz</button>
+<br>
+<h2> Fale "ligar" para a lâmpada ligar após clicar no botão "Ativar Reconhecimento de Voz" </h2>
+<br>
+<div class="button-container">
+    <a class="styled-button" href="index.html" target="_blank">Voltar para o site</a>
+  </div>
+</body>
+</html>
